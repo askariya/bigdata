@@ -1,0 +1,55 @@
+SENG 501 - Software Processes and Management 
+
+__Introduction Lecture (Sept.11th/2017)__
+- Familiarity with algorithms that can process large amounts of data 
+- Large scale text processing
+- No textbook
+
+
+- Hadoop MapReduce Framework***
+- Hadoop ecosystem
+- Programming Spark using PySpark
+- Coding exercises and Projects will be in Python
+
+Lab Assignments --> Individual (2) - 10%
+Lab Projects --> Group(2) - 15%
+Quiz (2) - 5%
+Group presentation - 5%
+Midterm - 25%
+Final - 40%
+Need to pass the Final to pass the course
+
+Labs --> Room: ENG 203 
+
+
+Data Analysis
+--> Exploit data to find useful patterns and information
+--> Involves methods to:
+	- Collect data
+	- Inspect quality fo data
+	- Extract subsets of data
+	- Transform data
+	- Perform Exploratory Data Analysis
+	- Build Models from Data 
+
+__Example__
+
+Dependant Variables (y):
+	- Commute Time
+
+Independent Variables (x):
+	- Accidents
+	- Weather 
+	- Day of the week
+	- etc.
+
+f = model
+
+y = f(x) 
+
+__Correlation__
+- Correlation != Causation
+- If a and b are positively correlated 
+	- Temptation is to conclude "as a increases, b increases"
+	- or "as a decreases, b decreases"
+	- This is NOT necessarily true
