@@ -3,6 +3,8 @@
 
 # input format: node<tab>adjacency_list|score|colour|parent
 import sys
+import string
+
 for line in sys.stdin:
     line = line.strip() # remove all whitespace at the front and the end of each of the lines
     node, rest = line.split('\t')
@@ -12,12 +14,15 @@ for line in sys.stdin:
     # if colour is black or white, print the record
     if colour  == "BLACK" or colour == "WHITE":
         print line
+        continue
     # if the colour is gray make the nodes colour black and emit the node
     if colour == "GRAY":
         colour = "BLACK"
         print "%s\t%s|%s|%s|%s" %(node, adj_list, score, colour, parent)
         # for each kid, make their colour gray, assign parent, calculate score and print
-        for kid in adj_list_array:
+        for kid in adj_list.split(','):
+            if kid == "None":
+                print ("HEYYY", parent)
             kid_colour = "GRAY"
             kid_parent = node
             kid_score = int(score) + 1

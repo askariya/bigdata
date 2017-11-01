@@ -34,6 +34,7 @@ for line in sys.stdin:
         # assign values to the finished node
         updateFinishedNode(node, adj_list, score, colour, parent)
         prev_node = node
+        continue
 
     # if this is another record of the same node
     if prev_node == node:
@@ -49,23 +50,24 @@ for line in sys.stdin:
             raise ValueError('Colour is not in our list')
 
         # ADJACENCY LIST: Get the non-null adjacency list
-        if adj_list != None:
+        if adj_list != "None":
             fin_node['adj_list'] = adj_list
         # SCORE + PARENT: Get the score and parent of the lowest
-        if score != None and fin_node['score'] != None:
+        if score != "None" and fin_node['score'] != "None":
             if score < fin_node['score']:
                 fin_node['score'] = score
                 fin_node['parent'] = parent
-        elif score != None and fin_node['score'] == None:
+        elif score != "None" and fin_node['score'] == "None":
             fin_node['score'] = score
             fin_node['parent'] = parent
+        continue
 
     # if this is a new node
     if prev_node != node:
-        print fin_node
+        print"%s\t%s|%s|%s|%s" %(fin_node['node_id'], fin_node['adj_list'], fin_node['score'], fin_node['colour'], fin_node['parent'])
         updateFinishedNode(node, adj_list, score, colour, parent)
         prev_node = node
-print fin_node
+print"%s\t%s|%s|%s|%s" %(fin_node['node_id'], fin_node['adj_list'], fin_node['score'], fin_node['colour'], fin_node['parent'])
 
 
     # # if colour is black or white, print the record
